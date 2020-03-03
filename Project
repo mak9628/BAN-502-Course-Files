@@ -1,0 +1,9 @@
+chicago = chicago %>%
+  separate(Date, sep="-", into = c("Year", "Month", "Day"))
+  
+  
+vim_plot = aggr(rain, numbers = TRUE, prop = c(TRUE, FALSE),cex.axis=.7)
+
+rain_imp = mice(chicago, m=1, method = "pmm", seed = 12345)
+
+ggplot(rain_complete,aes(x=RainTomorrow, y=Cloud3pm)) + geom_boxplot()
