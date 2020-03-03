@@ -7,3 +7,22 @@ vim_plot = aggr(rain, numbers = TRUE, prop = c(TRUE, FALSE),cex.axis=.7)
 rain_imp = mice(chicago, m=1, method = "pmm", seed = 12345)
 
 ggplot(rain_complete,aes(x=RainTomorrow, y=Cloud3pm)) + geom_boxplot()
+
+
+install.packages("corrplot")
+library(corrplot)
+Next, we’ll run the corrplot function providing our original correlation matrix as the data input to the function.
+
+1
+corrplot(mydata.cor)
+
+ggpairs(data=trees, columns=1:3, title="trees data")
+
+
+ggplot(data = trees, aes(x = Girth, y = Volume)) +
+geom_point() +
+stat_smooth(method = "lm", col = "dodgerblue3") +
+theme(panel.background = element_rect(fill = "white"),
+axis.line.x=element_line(),
+axis.line.y=element_line()) +
+ggtitle("Linear Model Fitted to Data")
